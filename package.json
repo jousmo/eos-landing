@@ -1,0 +1,32 @@
+{
+  "name": "eos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js' --directory --port 7777",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/mixen/eos.git"
+  },
+  "author": "Luis Carlos Pando <hey@luiscarlospando.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/mixen/eos/issues"
+  },
+  "homepage": "https://gitlab.com/mixen/eos#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "animate.css": "^4.1.0",
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.0",
+    "rellax": "^1.12.1",
+    "waypoints": "^4.0.1"
+  }
+}
