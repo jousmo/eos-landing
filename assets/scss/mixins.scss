@@ -1,0 +1,56 @@
+@mixin placeholder($color) {
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $color;
+        opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: $color;
+    }
+
+    .form-control::-webkit-input-placeholder { /* Bootstrap's form-control */
+        color: $color;
+    }
+}
+
+// Animación Botón Banner
+@mixin banner-button-animation {
+    -webkit-animation: button-animation 1.75s infinite;
+            animation: button-animation 1.75s infinite;
+}
+
+// Keyframes
+@keyframes button-animation {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100% {
+        margin-top: 26px;
+        opacity   : 0;
+    }
+}
+
+@mixin bg-transition($time, $property) {
+    -webkit-transition: $time $property;
+         -o-transition: $time $property;
+            transition: $time $property;
+}
+
+@mixin bg-scale($foo) {
+    -webkit-transform: scale($foo);
+        -ms-transform: scale($foo);
+            transform: scale($foo);
+}

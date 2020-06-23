@@ -1,0 +1,306 @@
+@import 'colors';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'fonts';
+@import 'mixins';
+@import 'formulario';
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+@include placeholder($texto2);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700 !important;
+}
+
+header,
+section,
+footer {
+    width: 100%;
+    float: left;
+    padding: 60px 0;
+}
+
+.jumbotron {
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+.banner {
+    color: $texto2;
+    height: auto;
+
+    .btn {
+        position: relative;
+
+        &::before,
+        &::after {
+            position: absolute;
+            background-color: $texto2;
+            content: '';
+        }
+
+        &::before {
+            top: 22px;
+            left: -25px;
+            width: 15px;
+            height: 1px;
+        }
+
+        &::after {
+            background: url('../images/elipse.png') no-repeat;
+            top: -266px;
+            left: -33px;
+            width: 17px;
+            height: 289px;
+        }
+    }
+
+    .btn-banner {
+        color: $texto2;
+        display: inline-block;
+        width: 28px;
+        height: 50px;
+        margin: 0 0 40px;
+        border: 1px solid $texto2;
+        border-radius: 50px;
+        padding: 4px;
+        box-sizing: border-box;
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+        z-index: 4;
+
+        img,
+        i {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            @include banner-button-animation;
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+
+        &::after {
+            position: absolute;
+            content: 'scroll down';
+            font-size: 0.8rem;
+            top: 15px;
+            right: -84px;
+            line-height: 1rem;
+            text-align: center;
+        }
+    }
+}
+
+#nuestros-clientes {
+    padding-bottom: 0;
+
+    #titulo {
+        text-align: center;
+
+        span {
+            font-weight: normal;
+        }
+    }
+}
+
+#conoce-eos {
+    #titulo {
+        color: $primary;
+        position: relative;
+        padding-left: 156px;
+
+        &::before {
+            background-color: #000;
+            position: absolute;
+            top: 23px;
+            left: 0;
+            width: 140px;
+            height: 1px;
+            content: '';
+        }
+    }
+
+    .blockquote {
+        position: relative;
+        margin: 6rem 0 7rem;
+
+        span {
+            font-weight: 700;
+        }
+
+        &::before,
+        &::after {
+            position: absolute;
+            color: $texto3;
+            font-size: 6rem;
+            font-weight: 700;
+        }
+
+        &::before {
+            content: '“';
+            top: -30px;
+            left: -40px;
+        }
+
+        &::after {
+            content: '”';
+            bottom: -30px;
+            right: -40px;
+        }
+    }
+}
+
+#todo-en-un-solo-lugar {
+    color: $texto2;
+    height: auto;
+
+    h5 {
+        margin-bottom: 0;
+    }
+
+    #titulo {
+        font-weight: normal !important;
+        font-size: 3.5rem;
+        letter-spacing: -4px;
+        text-transform: lowercase;
+        text-align: center;
+
+        span {
+            color: $primary;
+            font-size: 4.5rem;
+            font-weight: bold;
+        }
+    }
+
+    hr {
+        border-top: 1px solid #fff;
+    }
+}
+
+#somos-una-plataforma {
+    font-size: 2rem;
+}
+
+#descanso {
+    color: $texto2;
+    font-size: 3rem;
+    height: auto;
+    text-align: center;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    color: $texto2;
+    height: auto;
+    padding-bottom: 0;
+    
+    a,
+    a:hover,
+    a:focus {
+        color: $texto2;
+    }
+
+    ul {
+        li {
+            margin-bottom: 0.6rem;
+            position: relative;
+        }
+
+        .direccion,
+        .telefono,
+        .correo-electronico {
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                top: 0;
+                left: -28px;
+            }
+        }
+
+        .direccion {
+            &::before {
+                content: '\f3c5';
+            }
+        }
+
+        .telefono {
+            &::before {
+                content: '\f879';
+            }
+        }
+
+        .correo-electronico {
+            &::before {
+                content: '\f0e0';
+            }
+        }
+    }
+
+    address {
+        margin-bottom: 0;
+    }
+
+    form {
+        .form-row {
+            .form-group {
+                input,
+                textarea {
+                    background-color: transparent;
+                    border-radius: 0;
+                    border: 0;
+                    border-bottom: 1px solid $texto2;
+                }
+            }
+        }
+    }
+
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+
+        .copyright {
+            background-color: $bg-copyright;
+            width: 100%;
+            float: left;
+            margin-top: 60px;
+            padding: 15px 0;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            .logo-mixen {
+                max-width: 74px;
+                vertical-align: sub;
+            }
+        }
+    }
+}
+
+@import 'media-queries';
