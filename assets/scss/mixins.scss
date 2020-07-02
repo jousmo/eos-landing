@@ -1,20 +1,14 @@
-@mixin placeholder($color) {
-    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: $color;
-        opacity: 1; /* Firefox */
-    }
+// Transiciones
+@mixin transition($property, $time) {
+  -webkit-transition: $property $time;
+       -o-transition: $property $time;
+          transition: $property $time;
+}
 
-    :-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: $color;
-    }
-
-    ::-ms-input-placeholder { /* Microsoft Edge */
-        color: $color;
-    }
-
-    .form-control::-webkit-input-placeholder { /* Bootstrap's form-control */
-        color: $color;
-    }
+@mixin transition-menu($time) {
+    -webkit-transition: $time;
+         -o-transition: $time;
+            transition: $time;
 }
 
 // Animación Botón Banner
@@ -43,14 +37,22 @@
     }
 }
 
-@mixin bg-transition($time, $property) {
-    -webkit-transition: $time $property;
-         -o-transition: $time $property;
-            transition: $time $property;
-}
+// Placeholders
+@mixin placeholder($color) {
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $color;
+        opacity: 1; /* Firefox */
+    }
 
-@mixin bg-scale($foo) {
-    -webkit-transform: scale($foo);
-        -ms-transform: scale($foo);
-            transform: scale($foo);
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: $color;
+    }
+
+    .form-control::-webkit-input-placeholder { /* Bootstrap's form-control */
+        color: $color;
+    }
 }

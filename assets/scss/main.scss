@@ -4,8 +4,10 @@
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
 @import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/animate.css/animate.min.css';
 @import 'fonts';
 @import 'mixins';
+@import 'navmenu';
 @import 'formulario';
 
 html,
@@ -29,6 +31,10 @@ h6 {
     font-weight: 700 !important;
 }
 
+a {
+    @include transition(ease, 0.2s);
+}
+
 header,
 section,
 footer {
@@ -42,9 +48,81 @@ footer {
     margin-bottom: 0;
 }
 
-.banner {
+.opacity-0 {
+    opacity: 0 !important;
+}
+
+.opacity-1 {
+    opacity: 1 !important;
+}
+
+header {
+    background-color: transparent;
     color: $texto2;
-    height: auto;
+    padding: 15px 0;
+    position: fixed;
+    z-index: 1;
+    opacity: 1 !important;
+    @include transition(ease, 0.2s);
+
+    a {
+        color: $texto2;
+
+        &:hover,
+        &:focus {
+            color: $primary;
+            text-decoration: none;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    #logo-navbar,
+    #logo-navbar-2 {
+        max-width: 64px;
+    }
+
+    .fa-bars {
+        vertical-align: sub;
+    }
+
+    .left,
+    .right {
+        margin-bottom: 0;
+    }
+
+    .right {
+        float: right;
+
+        .fa-bars {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.sticky {
+    background-color: rgba(255,255,255,1);
+    z-index: 99999;
+
+    a,
+    p {
+        color: $texto1;
+    }
+}
+
+.banner {
+    // background: url('../images/bg-banner.jpg') no-repeat;
+    // background-position: center;
+    // background-size: cover;
+    // background-attachment: fixed;
+    color: $texto2;
+    min-height: 100vh;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 
     .btn {
         position: relative;
@@ -78,7 +156,7 @@ footer {
         width: 28px;
         height: 50px;
         margin: 0 0 40px;
-        border: 1px solid $texto2;
+        border: 2px solid $texto2;
         border-radius: 50px;
         padding: 4px;
         box-sizing: border-box;
@@ -118,18 +196,24 @@ footer {
 
     #titulo {
         text-align: center;
+        opacity: 0;
 
         span {
             font-weight: normal;
         }
     }
+
+    .cliente {
+        opacity: 0;
+    }
 }
 
 #conoce-eos {
-    #titulo {
+    #titulo-2 {
         color: $primary;
         position: relative;
         padding-left: 156px;
+        opacity: 0;
 
         &::before {
             background-color: #000;
@@ -170,11 +254,23 @@ footer {
             right: -40px;
         }
     }
+
+    .feature,
+    .blockquote {
+        opacity: 0;
+    }
+
+    #computadoras {
+        .computadora {
+            opacity: 0;
+        }
+    }
 }
 
 #todo-en-un-solo-lugar {
     color: $texto2;
     height: auto;
+    opacity: 0;
 
     h5 {
         margin-bottom: 0;
@@ -201,6 +297,11 @@ footer {
 
 #somos-una-plataforma {
     font-size: 2rem;
+
+    #headline,
+    .plataforma {
+        opacity: 0;
+    }
 }
 
 #descanso {
@@ -208,6 +309,7 @@ footer {
     font-size: 3rem;
     height: auto;
     text-align: center;
+    opacity: 0;
 
     p {
         margin-bottom: 0;
@@ -218,6 +320,7 @@ footer {
     color: $texto2;
     height: auto;
     padding-bottom: 0;
+    opacity: 0;
     
     a,
     a:hover,
@@ -275,6 +378,7 @@ footer {
                     border-radius: 0;
                     border: 0;
                     border-bottom: 1px solid $texto2;
+                    color: $texto2;
                 }
             }
         }
