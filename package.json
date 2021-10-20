@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/mixen/eos.git"
+    "url": "git@github.com:jousmo/eos-landing.git"
   },
-  "author": "Luis Carlos Pando <hey@luiscarlospando.com>",
+  "author": "Jaxitank",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/mixen/eos/issues"
+    "url": "https://github.com/jousmo/eos-landing/issues"
   },
-  "homepage": "https://gitlab.com/mixen/eos#readme",
+  "homepage": "https://github.com/jousmo/eos-landing#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7"
   },
